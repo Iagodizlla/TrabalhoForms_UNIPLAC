@@ -19,10 +19,30 @@ namespace Trabalho_Forms
 
         private void TelaExemplar_Load(object sender, EventArgs e)
         {
-
+            painalEbook.Enabled = checkEBook.Checked;
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void painalEbook_Paint(object sender, PaintEventArgs e)
         {
 
         }

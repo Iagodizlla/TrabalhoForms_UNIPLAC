@@ -16,5 +16,17 @@ namespace Trabalho_Forms
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelaPessoa telaP = new TelaPessoa(); // Cria a nova tela
+            telaP.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TelaExemplar telaE = new TelaExemplar(); // Cria a nova tela
+            telaE.ShowDialog();
+        }
     }
 }

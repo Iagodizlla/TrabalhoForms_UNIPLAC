@@ -40,6 +40,7 @@
             button1.TabIndex = 0;
             button1.Text = "Cadatrar Pessoa";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -49,6 +50,7 @@
             button2.TabIndex = 1;
             button2.Text = "Cadastrar Exemplar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Biblioteca
             // 

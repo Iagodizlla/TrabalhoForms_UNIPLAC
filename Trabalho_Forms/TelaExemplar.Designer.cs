@@ -31,9 +31,9 @@
             panel1 = new Panel();
             button1 = new Button();
             panel2 = new Panel();
-            comboBox2 = new ComboBox();
+            generoExemplar = new ComboBox();
             numericUpDown1 = new NumericUpDown();
-            comboBox1 = new ComboBox();
+            statusExemplar = new ComboBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -73,7 +73,7 @@
             label14 = new Label();
             numericUpDown5 = new NumericUpDown();
             Generico = new TabPage();
-            listBox1 = new ListBox();
+            listaGenerico = new ListBox();
             label16 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -111,13 +111,13 @@
             button1.TabIndex = 0;
             button1.Text = "Salvar";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            button1.Click += botaoSalvarExemplar;
             // 
             // panel2
             // 
-            panel2.Controls.Add(comboBox2);
+            panel2.Controls.Add(generoExemplar);
             panel2.Controls.Add(numericUpDown1);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(statusExemplar);
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(textBox2);
@@ -134,14 +134,16 @@
             panel2.Size = new Size(384, 405);
             panel2.TabIndex = 1;
             // 
-            // comboBox2
+            // generoExemplar
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Romance", "Novela", "Conto", "Crônica", "Poema", "Canção", "Drama histórico", "Teatro de vanguarda" });
-            comboBox2.Location = new Point(3, 274);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(219, 28);
-            comboBox2.TabIndex = 18;
+            generoExemplar.DropDownStyle = ComboBoxStyle.DropDownList;
+            generoExemplar.FormattingEnabled = true;
+            generoExemplar.Items.AddRange(new object[] { "Romance", "Novela", "Conto", "Crônica", "Poema", "Canção", "Drama histórico", "Teatro de vanguarda" });
+            generoExemplar.Location = new Point(3, 274);
+            generoExemplar.Name = "generoExemplar";
+            generoExemplar.Size = new Size(219, 28);
+            generoExemplar.TabIndex = 18;
+            generoExemplar.SelectedIndexChanged += GeneroExemplar;
             // 
             // numericUpDown1
             // 
@@ -151,15 +153,18 @@
             numericUpDown1.Size = new Size(165, 27);
             numericUpDown1.TabIndex = 17;
             numericUpDown1.Value = new decimal(new int[] { 2025, 0, 0, 0 });
+            numericUpDown1.ValueChanged += AnoPublicacaoExemplar;
             // 
-            // comboBox1
+            // statusExemplar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Pendente", "Lido", "Emprestado", "Devolvido", "Perdido" });
-            comboBox1.Location = new Point(3, 326);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(219, 28);
-            comboBox1.TabIndex = 16;
+            statusExemplar.DropDownStyle = ComboBoxStyle.DropDownList;
+            statusExemplar.FormattingEnabled = true;
+            statusExemplar.Items.AddRange(new object[] { "Pendente", "Lido", "Emprestado", "Devolvido", "Perdido" });
+            statusExemplar.Location = new Point(3, 326);
+            statusExemplar.Name = "statusExemplar";
+            statusExemplar.Size = new Size(219, 28);
+            statusExemplar.TabIndex = 16;
+            statusExemplar.SelectedIndexChanged += StatusExemplar;
             // 
             // textBox4
             // 
@@ -167,6 +172,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(326, 27);
             textBox4.TabIndex = 14;
+            textBox4.TextChanged += EditoraExemplar;
             // 
             // textBox3
             // 
@@ -174,6 +180,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(326, 27);
             textBox3.TabIndex = 13;
+            textBox3.TextChanged += EscritorExemplar;
             // 
             // textBox2
             // 
@@ -181,6 +188,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(326, 27);
             textBox2.TabIndex = 12;
+            textBox2.TextChanged += SubTituloExemplar;
             // 
             // textBox1
             // 
@@ -188,6 +196,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(326, 27);
             textBox1.TabIndex = 11;
+            textBox1.TextChanged += TituloExemplar;
             // 
             // label8
             // 
@@ -292,6 +301,7 @@
             // 
             // painalEbook
             // 
+            painalEbook.CausesValidation = false;
             painalEbook.Controls.Add(textBox7);
             painalEbook.Controls.Add(label19);
             painalEbook.Controls.Add(numericUpDown6);
@@ -310,6 +320,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(354, 27);
             textBox7.TabIndex = 19;
+            textBox7.TextChanged += URLEbook;
             // 
             // label19
             // 
@@ -327,6 +338,7 @@
             numericUpDown6.Name = "numericUpDown6";
             numericUpDown6.Size = new Size(165, 27);
             numericUpDown6.TabIndex = 19;
+            numericUpDown6.ValueChanged += TamanhoEbook;
             // 
             // label18
             // 
@@ -339,12 +351,14 @@
             // 
             // comboBox4
             // 
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox4.FormattingEnabled = true;
             comboBox4.Items.AddRange(new object[] { "Portable Document Format (PDF)", "Electronic Publication (ePUB)", "Mobipocket (MOBI)", "Kindle Package Format (KPF)", "Outros" });
             comboBox4.Location = new Point(3, 30);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(354, 28);
             comboBox4.TabIndex = 6;
+            comboBox4.SelectedIndexChanged += FormatoEbook;
             // 
             // label17
             // 
@@ -365,6 +379,7 @@
             checkEBook.Text = "EBook";
             checkEBook.UseVisualStyleBackColor = true;
             checkEBook.CheckedChanged += TelaExemplar_Load;
+            checkEBook.Paint += painalEbook_Paint;
             // 
             // textBox5
             // 
@@ -372,6 +387,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(326, 27);
             textBox5.TabIndex = 19;
+            textBox5.TextChanged += ISBNLivro;
             // 
             // label11
             // 
@@ -393,13 +409,14 @@
             // 
             // comboBox3
             // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "Capa Dura", "Capa Flexível ou Brochura", "Capa de Papel Cartão", "Capa com Sobrecapa (Jacket) • Capa com Relevo", "Capa com Verniz UV", "Capa Metalizada", "Capa de Tecido", "Capa com Janela", "Capa Transparente", "Capa Digital" });
             comboBox3.Location = new Point(6, 79);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
             comboBox3.TabIndex = 2;
-            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            comboBox3.SelectedIndexChanged += TipoCapaLivro;
             // 
             // numericUpDown2
             // 
@@ -408,6 +425,7 @@
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(150, 27);
             numericUpDown2.TabIndex = 1;
+            numericUpDown2.ValueChanged += PaginasLivro;
             // 
             // label9
             // 
@@ -448,6 +466,7 @@
             numericUpDown4.Name = "numericUpDown4";
             numericUpDown4.Size = new Size(150, 27);
             numericUpDown4.TabIndex = 20;
+            numericUpDown4.ValueChanged += PaginasRevista;
             // 
             // label12
             // 
@@ -465,6 +484,7 @@
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(150, 27);
             numericUpDown3.TabIndex = 0;
+            numericUpDown3.ValueChanged += EdicaoRevista;
             // 
             // HQ
             // 
@@ -485,6 +505,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(326, 27);
             textBox6.TabIndex = 19;
+            textBox6.TextChanged += IlustradorHQ;
             // 
             // label15
             // 
@@ -511,10 +532,11 @@
             numericUpDown5.Name = "numericUpDown5";
             numericUpDown5.Size = new Size(150, 27);
             numericUpDown5.TabIndex = 20;
+            numericUpDown5.ValueChanged += EdicaoHQ;
             // 
             // Generico
             // 
-            Generico.Controls.Add(listBox1);
+            Generico.Controls.Add(listaGenerico);
             Generico.Controls.Add(label16);
             Generico.Location = new Point(4, 29);
             Generico.Name = "Generico";
@@ -523,14 +545,15 @@
             Generico.Text = "Generico";
             Generico.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listaGenerico
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] { "Jornais", "Calendários e Agendas", "Mapas e Atlas", "Postais e Cartões de Saudação", "Papéis de Presente e Material de Embalagem", "DVDs e Blu-rays", "CDs e Vinis", "K7", "Jogos de Tabuleiro e Quebra-Cabeças", "Material de Papelaria e Escritório", "Produtos Relacionados à Cultura Pop", "Audiolivros", "Outros" });
-            listBox1.Location = new Point(17, 41);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(335, 264);
-            listBox1.TabIndex = 25;
+            listaGenerico.FormattingEnabled = true;
+            listaGenerico.Items.AddRange(new object[] { "Jornais", "Calendários e Agendas", "Mapas e Atlas", "Postais e Cartões de Saudação", "Papéis de Presente e Material de Embalagem", "DVDs e Blu-rays", "CDs e Vinis", "K7", "Jogos de Tabuleiro e Quebra-Cabeças", "Material de Papelaria e Escritório", "Produtos Relacionados à Cultura Pop", "Audiolivros", "Outros" });
+            listaGenerico.Location = new Point(17, 41);
+            listaGenerico.Name = "listaGenerico";
+            listaGenerico.Size = new Size(335, 264);
+            listaGenerico.TabIndex = 25;
+            listaGenerico.SelectedIndexChanged += TipoGenerico;
             // 
             // label16
             // 
@@ -607,8 +630,8 @@
         private Label label6;
         private Label label5;
         private NumericUpDown numericUpDown1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox statusExemplar;
+        private ComboBox generoExemplar;
         private TabControl tabControl1;
         private TabPage Livro;
         private Label label10;
@@ -629,8 +652,7 @@
         private Label label14;
         private NumericUpDown numericUpDown5;
         private Label label16;
-        private ListBox listBox1;
-        private Panel painalEbook;
+        private ListBox listaGenerico;
         private ComboBox comboBox4;
         private Label label17;
         private CheckBox checkEBook;
@@ -638,5 +660,6 @@
         private Label label19;
         private NumericUpDown numericUpDown6;
         private Label label18;
+        public Panel painalEbook;
     }
 }

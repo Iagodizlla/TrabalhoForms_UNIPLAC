@@ -1,7 +1,7 @@
 ﻿namespace Trabalho_Forms;
 
 // Classe Ebook (herda de Livro)
-public class Ebook : Livro
+public class Ebook : Livro, Dados
 {
     public string Formato { get; set; }
     public decimal Tamanho { get; set; }
@@ -18,4 +18,12 @@ public class Ebook : Livro
     {
         return $"[Ebook] {Titulo} - URL: {Url}";
     }
+
+    public void MostrarDados()
+    {
+        Console.WriteLine($"Titulo: {Titulo}, Subtitulo: {SubTitulo}, Escritor: {Escritor}, Editora: {Editora}, Ano de Publicacao: {AnoPublicacao}" +
+            $", Genero: {Genero}, Status: {Status}, Formato: {Formato}, Tamanho: {Tamanho}, URL: {Url},Paginas: {Paginas}" +
+            $", Tipo de Capa: {TipoCapa}, ISBN: {Isbn}");
+    }
 }
+//Iago Henrique Schlemper

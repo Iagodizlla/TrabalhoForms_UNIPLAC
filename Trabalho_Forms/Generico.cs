@@ -15,3 +15,4 @@ public class Generico : Exemplar
         return $"[Generico] {Titulo} - Tipo: {Tipo}";
     }
 }
+//Iago Henrique Schlemper

@@ -52,7 +52,7 @@
             numericUpDown2 = new NumericUpDown();
             numericUpDown1 = new NumericUpDown();
             label8 = new Label();
-            comboBox1 = new ComboBox();
+            cargoFuncionario = new ComboBox();
             panel3 = new Panel();
             button1 = new Button();
             pageSetupDialog1 = new PageSetupDialog();
@@ -93,6 +93,7 @@
             maskedTextBox2.Name = "maskedTextBox2";
             maskedTextBox2.Size = new Size(156, 27);
             maskedTextBox2.TabIndex = 11;
+            maskedTextBox2.MaskInputRejected += telefonePessoa;
             // 
             // maskedTextBox1
             // 
@@ -101,6 +102,7 @@
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(156, 27);
             maskedTextBox1.TabIndex = 10;
+            maskedTextBox1.MaskInputRejected += cpfPessoa;
             // 
             // textBox3
             // 
@@ -108,6 +110,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(347, 27);
             textBox3.TabIndex = 8;
+            textBox3.TextChanged += emailPessoa;
             // 
             // dateTimePicker1
             // 
@@ -115,6 +118,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(347, 27);
             dateTimePicker1.TabIndex = 6;
+            dateTimePicker1.ValueChanged += dataNascimentoPessoa;
             // 
             // textBox1
             // 
@@ -122,6 +126,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(347, 27);
             textBox1.TabIndex = 5;
+            textBox1.TextChanged += nomePessoa;
             // 
             // label6
             // 
@@ -217,7 +222,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(337, 264);
             listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listBox1.SelectedIndexChanged += listaLeitor;
             // 
             // Funcionario
             // 
@@ -228,7 +233,7 @@
             Funcionario.Controls.Add(numericUpDown2);
             Funcionario.Controls.Add(numericUpDown1);
             Funcionario.Controls.Add(label8);
-            Funcionario.Controls.Add(comboBox1);
+            Funcionario.Controls.Add(cargoFuncionario);
             Funcionario.Location = new Point(4, 29);
             Funcionario.Name = "Funcionario";
             Funcionario.Padding = new Padding(3);
@@ -252,6 +257,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 6;
+            textBox2.TextChanged += funcaoFuncionario;
             // 
             // label10
             // 
@@ -279,6 +285,7 @@
             numericUpDown2.Size = new Size(150, 27);
             numericUpDown2.TabIndex = 3;
             numericUpDown2.Value = new decimal(new int[] { 80, 0, 0, 0 });
+            numericUpDown2.ValueChanged += cargaHorariaFuncionario;
             // 
             // numericUpDown1
             // 
@@ -290,6 +297,7 @@
             numericUpDown1.Size = new Size(150, 27);
             numericUpDown1.TabIndex = 2;
             numericUpDown1.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDown1.ValueChanged += salarioFuncionario;
             // 
             // label8
             // 
@@ -300,15 +308,17 @@
             label8.TabIndex = 1;
             label8.Text = "Cargo";
             // 
-            // comboBox1
+            // cargoFuncionario
             // 
-            comboBox1.DisplayMember = "1";
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Gerente", "Atendente", "Caixa", "Estagiário" });
-            comboBox1.Location = new Point(21, 39);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(220, 28);
-            comboBox1.TabIndex = 0;
+            cargoFuncionario.DisplayMember = "1";
+            cargoFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
+            cargoFuncionario.FormattingEnabled = true;
+            cargoFuncionario.Items.AddRange(new object[] { "Gerente", "Atendente", "Caixa", "Estagiário" });
+            cargoFuncionario.Location = new Point(21, 39);
+            cargoFuncionario.Name = "cargoFuncionario";
+            cargoFuncionario.Size = new Size(220, 28);
+            cargoFuncionario.TabIndex = 0;
+            cargoFuncionario.SelectedIndexChanged += cargaFuncionario;
             // 
             // panel3
             // 
@@ -327,6 +337,7 @@
             button1.TabIndex = 0;
             button1.Text = "Salvar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += botaoSalvarPessoa;
             // 
             // label1
             // 
@@ -393,7 +404,7 @@
         private NumericUpDown numericUpDown2;
         private NumericUpDown numericUpDown1;
         private Label label8;
-        private ComboBox comboBox1;
+        private ComboBox cargoFuncionario;
         private Label label11;
         private TextBox textBox2;
     }

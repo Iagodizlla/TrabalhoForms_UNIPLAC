@@ -23,3 +23,4 @@ public abstract class Pessoa
     public abstract void EditaExemplarLeitor(Exemplar exemplar, Leitor leitor);
     public abstract void ListaExemplarLeitor(Exemplar exemplar, Leitor leitor);
 }
+//Iago Henrique Schlemper

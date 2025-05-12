@@ -17,3 +17,4 @@ public class Hq : Exemplar
         return $"[HQ] {Titulo} - Ilustrador: {Ilustrador}";
     }
 }
+//Iago Henrique Schlemper

@@ -23,5 +23,6 @@ public class Funcionario : Pessoa
     public override void EditaExemplarLeitor(Exemplar exemplar, Leitor leitor) { }
     public override void ListaExemplarLeitor(Exemplar exemplar, Leitor leitor) { }
 
-    public override string ToString() { return base.ToString(); }
+    public override string ToString() { return base.ToString()!; }
 }
+//Iago Henrique Schlemper

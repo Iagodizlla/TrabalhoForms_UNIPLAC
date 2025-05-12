@@ -17,3 +17,4 @@ public class Revista : Exemplar
         return $"[Revista] {Titulo} - Edição: {Edicao}";
     }
 }
+//Iago Henrique Schlemper

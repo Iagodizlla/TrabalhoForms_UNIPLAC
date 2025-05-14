@@ -76,6 +76,8 @@
             listaGenerico = new ListBox();
             label16 = new Label();
             label1 = new Label();
+            button2 = new Button();
+            button3 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -95,19 +97,21 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(12, 423);
             panel1.Name = "panel1";
-            panel1.Size = new Size(776, 39);
+            panel1.Size = new Size(776, 76);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.GradientInactiveCaption;
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(4, 3);
             button1.Name = "button1";
-            button1.Size = new Size(770, 33);
+            button1.Size = new Size(380, 70);
             button1.TabIndex = 0;
             button1.Text = "Salvar";
             button1.UseVisualStyleBackColor = false;
@@ -298,6 +302,7 @@
             Livro.TabIndex = 0;
             Livro.Text = "Livro";
             Livro.UseVisualStyleBackColor = true;
+            Livro.Click += Livro_Click;
             // 
             // painalEbook
             // 
@@ -574,11 +579,31 @@
             label1.Text = "Exemplar";
             label1.Click += label1_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.LimeGreen;
+            button2.Location = new Point(389, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(199, 70);
+            button2.TabIndex = 1;
+            button2.Text = "Editar";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Firebrick;
+            button3.Location = new Point(594, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(175, 70);
+            button3.TabIndex = 2;
+            button3.Text = "Excluir";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // TelaExemplar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 474);
+            ClientSize = new Size(798, 511);
             Controls.Add(label1);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -661,5 +686,7 @@
         private NumericUpDown numericUpDown6;
         private Label label18;
         public Panel painalEbook;
+        private Button button3;
+        private Button button2;
     }
 }

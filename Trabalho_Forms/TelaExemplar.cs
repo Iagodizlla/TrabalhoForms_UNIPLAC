@@ -1,20 +1,11 @@
 ﻿using ProjetoFinalBiblioteca;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace Trabalho_Forms
 {
     public partial class TelaExemplar : Form
     {
-        public TelaExemplar()
+        public List<Exemplar> exemplares;
+        public TelaExemplar(List<Exemplar> exemplares)
         {
             InitializeComponent();
             // carrega os valores do Enum para o combobox/Listbox
@@ -22,6 +13,7 @@ namespace Trabalho_Forms
             statusExemplar.SelectedIndex = 0;
             listaGenerico.DataSource = Enum.GetValues(typeof(EnumGenericoTipo));
             listaGenerico.SelectedIndex = 0;
+            this.exemplares = exemplares;
         }
 
         private void TelaExemplar_Load(object sender, EventArgs e)
@@ -135,6 +127,11 @@ namespace Trabalho_Forms
         }
 
         private void TipoGenerico(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Livro_Click(object sender, EventArgs e)
         {
 
         }

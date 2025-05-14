@@ -7,17 +7,18 @@ public abstract class Pessoa
     public string Cpf { get; set; }
     public string Email { get; set; }
     public string Telefone { get; set; }
+    public Pessoa(string nome,
+    DateTime nascimento,
+    string cpf,
+    string email,
+    string telefone)
 
-    public Pessoa(string nome, DateTime nascimento, string cpf, string email, string telefone)
     {
         Nome = nome;
         Nascimento = nascimento;
         Cpf = cpf;
         Email = email;
-        Telefone = telefone;
-    }
-    public abstract void ListaLeitor(Leitor leitor);
-    public abstract void EditaLeitor(Leitor leitor);
+        Telefone
     public abstract void AdicionaExemplarLeitor(Exemplar exemplar, Leitor leitor);
     public abstract void RemoveExemplarLeitor(Exemplar exemplar, Leitor leitor);
     public abstract void EditaExemplarLeitor(Exemplar exemplar, Leitor leitor);

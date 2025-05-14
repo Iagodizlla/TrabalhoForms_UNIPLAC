@@ -10,8 +10,14 @@ public abstract class Exemplar
     public int AnoPublicacao { get; set; }
     public string Genero { get; set; }
     public int Status { get; set; }
+    public Exemplar(string titulo,
+    string subTitulo,
+    string escritor,
+    string editora,
+    int anoPublicacao,
+    string genero,
+    int status)
 
-    public Exemplar(string titulo, string subTitulo, string escritor, string editora, int anoPublicacao, string genero, int status)
     {
         Titulo = titulo;
         SubTitulo = subTitulo;

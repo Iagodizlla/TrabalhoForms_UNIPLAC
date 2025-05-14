@@ -57,6 +57,11 @@
             button1 = new Button();
             pageSetupDialog1 = new PageSetupDialog();
             label1 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            panel4 = new Panel();
+            button4 = new Button();
+            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -179,7 +184,7 @@
             panel2.Controls.Add(tabControl1);
             panel2.Location = new Point(401, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(387, 355);
+            panel2.Size = new Size(946, 355);
             panel2.TabIndex = 1;
             // 
             // tabControl1
@@ -189,18 +194,21 @@
             tabControl1.Location = new Point(3, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(381, 349);
+            tabControl1.Size = new Size(940, 349);
             tabControl1.TabIndex = 1;
             // 
             // Leitor
             // 
             Leitor.BackColor = Color.Transparent;
+            Leitor.Controls.Add(panel4);
+            Leitor.Controls.Add(button3);
             Leitor.Controls.Add(label7);
             Leitor.Controls.Add(listBox1);
+            Leitor.Controls.Add(button2);
             Leitor.Location = new Point(4, 29);
             Leitor.Name = "Leitor";
             Leitor.Padding = new Padding(3);
-            Leitor.Size = new Size(373, 316);
+            Leitor.Size = new Size(932, 316);
             Leitor.TabIndex = 0;
             Leitor.Text = "Leitor";
             // 
@@ -220,7 +228,7 @@
             listBox1.Items.AddRange(new object[] { "Leitor Casual", "Leitor Avido", "Leitor de Ficcao", "Leitor de Nao Ficcao", "Leitor Critico", "Leitor de Best-sellers", "Leitor de Classicos", "Leitor de Genero Epscifico", "Leitor Academico", "Leitor Digital", "Leitor Tradicional", "Leitor de Livros de Bolso", "Leitor Multitarefa", "Outros" });
             listBox1.Location = new Point(18, 37);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(337, 264);
+            listBox1.Size = new Size(359, 264);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listaLeitor;
             // 
@@ -322,10 +330,12 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(button5);
+            panel3.Controls.Add(button4);
             panel3.Controls.Add(button1);
             panel3.Location = new Point(12, 373);
             panel3.Name = "panel3";
-            panel3.Size = new Size(776, 65);
+            panel3.Size = new Size(1335, 65);
             panel3.TabIndex = 2;
             // 
             // button1
@@ -348,12 +358,58 @@
             label1.TabIndex = 0;
             label1.Text = "Pessoa";
             // 
+            // button2
+            // 
+            button2.Location = new Point(467, 272);
+            button2.Name = "button2";
+            button2.Size = new Size(116, 29);
+            button2.TabIndex = 3;
+            button2.Text = "Add Exemplar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(699, 272);
+            button3.Name = "button3";
+            button3.Size = new Size(111, 29);
+            button3.TabIndex = 4;
+            button3.Text = "Del Exemplar";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.DarkGray;
+            panel4.Location = new Point(383, 37);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(543, 229);
+            panel4.TabIndex = 5;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.LightGreen;
+            button4.Location = new Point(779, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(310, 59);
+            button4.TabIndex = 1;
+            button4.Text = "Editar";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Red;
+            button5.Location = new Point(1095, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(237, 59);
+            button5.TabIndex = 2;
+            button5.Text = "Excluir";
+            button5.UseVisualStyleBackColor = false;
+            // 
             // TelaPessoa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1359, 450);
             Controls.Add(label1);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -407,5 +463,10 @@
         private ComboBox cargoFuncionario;
         private Label label11;
         private TextBox textBox2;
+        private Panel panel4;
+        private Button button3;
+        private Button button2;
+        private Button button5;
+        private Button button4;
     }
 }

@@ -97,6 +97,8 @@ namespace Trabalho_Forms
                 // cria o objeto e já adiciona no List
                 exemplares.Add(new Generico(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxTipo));
             }
+            MessageBox.Show("Exemplar cadastrado com sucesso!");
+            Close();
         }
 
         private void painalEbook_Paint(object sender, PaintEventArgs e)

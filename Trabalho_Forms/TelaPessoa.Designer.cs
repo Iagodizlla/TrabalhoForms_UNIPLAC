@@ -29,57 +29,57 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            maskedTextBox2 = new MaskedTextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            textBox3 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
+            maskedTextBoxTelefone = new MaskedTextBox();
+            maskedTextBoxCPF = new MaskedTextBox();
+            textBoxEmail = new TextBox();
+            dateTimePickeNascimento = new DateTimePicker();
+            textBoxNome = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             panel2 = new Panel();
-            tabControl1 = new TabControl();
+            tabControlPessoa = new TabControl();
             Leitor = new TabPage();
+            panel4 = new Panel();
+            button3 = new Button();
             label7 = new Label();
-            listBox1 = new ListBox();
+            listBoxTipo = new ListBox();
+            button2 = new Button();
             Funcionario = new TabPage();
             label11 = new Label();
-            textBox2 = new TextBox();
+            textBoxFuncao = new TextBox();
             label10 = new Label();
             label9 = new Label();
-            numericUpDown2 = new NumericUpDown();
-            numericUpDown1 = new NumericUpDown();
+            numericUpDownHoraria = new NumericUpDown();
+            numericUpDownSalario = new NumericUpDown();
             label8 = new Label();
             cargoFuncionario = new ComboBox();
             panel3 = new Panel();
+            button5 = new Button();
+            button4 = new Button();
             button1 = new Button();
             pageSetupDialog1 = new PageSetupDialog();
             label1 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            panel4 = new Panel();
-            button4 = new Button();
-            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            tabControl1.SuspendLayout();
+            tabControlPessoa.SuspendLayout();
             Leitor.SuspendLayout();
             Funcionario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHoraria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSalario).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(maskedTextBox2);
-            panel1.Controls.Add(maskedTextBox1);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(maskedTextBoxTelefone);
+            panel1.Controls.Add(maskedTextBoxCPF);
+            panel1.Controls.Add(textBoxEmail);
+            panel1.Controls.Add(dateTimePickeNascimento);
+            panel1.Controls.Add(textBoxNome);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
@@ -91,47 +91,47 @@
             panel1.Size = new Size(383, 355);
             panel1.TabIndex = 0;
             // 
-            // maskedTextBox2
+            // maskedTextBoxTelefone
             // 
-            maskedTextBox2.Location = new Point(3, 303);
-            maskedTextBox2.Mask = "(00) 0000-0000";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(156, 27);
-            maskedTextBox2.TabIndex = 11;
-            maskedTextBox2.MaskInputRejected += telefonePessoa;
+            maskedTextBoxTelefone.Location = new Point(3, 303);
+            maskedTextBoxTelefone.Mask = "(00) 0000-0000";
+            maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            maskedTextBoxTelefone.Size = new Size(156, 27);
+            maskedTextBoxTelefone.TabIndex = 11;
+            maskedTextBoxTelefone.MaskInputRejected += telefonePessoa;
             // 
-            // maskedTextBox1
+            // maskedTextBoxCPF
             // 
-            maskedTextBox1.Location = new Point(3, 166);
-            maskedTextBox1.Mask = "000,000,000-00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(156, 27);
-            maskedTextBox1.TabIndex = 10;
-            maskedTextBox1.MaskInputRejected += cpfPessoa;
+            maskedTextBoxCPF.Location = new Point(3, 166);
+            maskedTextBoxCPF.Mask = "000,000,000-00";
+            maskedTextBoxCPF.Name = "maskedTextBoxCPF";
+            maskedTextBoxCPF.Size = new Size(156, 27);
+            maskedTextBoxCPF.TabIndex = 10;
+            maskedTextBoxCPF.MaskInputRejected += cpfPessoa;
             // 
-            // textBox3
+            // textBoxEmail
             // 
-            textBox3.Location = new Point(3, 233);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(347, 27);
-            textBox3.TabIndex = 8;
-            textBox3.TextChanged += emailPessoa;
+            textBoxEmail.Location = new Point(3, 233);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(347, 27);
+            textBoxEmail.TabIndex = 8;
+            textBoxEmail.TextChanged += emailPessoa;
             // 
-            // dateTimePicker1
+            // dateTimePickeNascimento
             // 
-            dateTimePicker1.Location = new Point(3, 102);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(347, 27);
-            dateTimePicker1.TabIndex = 6;
-            dateTimePicker1.ValueChanged += dataNascimentoPessoa;
+            dateTimePickeNascimento.Location = new Point(3, 102);
+            dateTimePickeNascimento.Name = "dateTimePickeNascimento";
+            dateTimePickeNascimento.Size = new Size(347, 27);
+            dateTimePickeNascimento.TabIndex = 6;
+            dateTimePickeNascimento.ValueChanged += dataNascimentoPessoa;
             // 
-            // textBox1
+            // textBoxNome
             // 
-            textBox1.Location = new Point(3, 39);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(347, 27);
-            textBox1.TabIndex = 5;
-            textBox1.TextChanged += nomePessoa;
+            textBoxNome.Location = new Point(3, 39);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(347, 27);
+            textBoxNome.TabIndex = 5;
+            textBoxNome.TextChanged += nomePessoa;
             // 
             // label6
             // 
@@ -181,21 +181,21 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlDark;
-            panel2.Controls.Add(tabControl1);
+            panel2.Controls.Add(tabControlPessoa);
             panel2.Location = new Point(401, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 355);
             panel2.TabIndex = 1;
             // 
-            // tabControl1
+            // tabControlPessoa
             // 
-            tabControl1.Controls.Add(Leitor);
-            tabControl1.Controls.Add(Funcionario);
-            tabControl1.Location = new Point(3, 3);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(940, 349);
-            tabControl1.TabIndex = 1;
+            tabControlPessoa.Controls.Add(Leitor);
+            tabControlPessoa.Controls.Add(Funcionario);
+            tabControlPessoa.Location = new Point(3, 3);
+            tabControlPessoa.Name = "tabControlPessoa";
+            tabControlPessoa.SelectedIndex = 0;
+            tabControlPessoa.Size = new Size(940, 349);
+            tabControlPessoa.TabIndex = 1;
             // 
             // Leitor
             // 
@@ -203,7 +203,7 @@
             Leitor.Controls.Add(panel4);
             Leitor.Controls.Add(button3);
             Leitor.Controls.Add(label7);
-            Leitor.Controls.Add(listBox1);
+            Leitor.Controls.Add(listBoxTipo);
             Leitor.Controls.Add(button2);
             Leitor.Location = new Point(4, 29);
             Leitor.Name = "Leitor";
@@ -211,6 +211,23 @@
             Leitor.Size = new Size(932, 316);
             Leitor.TabIndex = 0;
             Leitor.Text = "Leitor";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.DarkGray;
+            panel4.Location = new Point(383, 37);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(543, 229);
+            panel4.TabIndex = 5;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(699, 272);
+            button3.Name = "button3";
+            button3.Size = new Size(111, 29);
+            button3.TabIndex = 4;
+            button3.Text = "Del Exemplar";
+            button3.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -221,31 +238,40 @@
             label7.TabIndex = 1;
             label7.Text = "Tipo";
             // 
-            // listBox1
+            // listBoxTipo
             // 
-            listBox1.ForeColor = SystemColors.InfoText;
-            listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] { "Leitor Casual", "Leitor Avido", "Leitor de Ficcao", "Leitor de Nao Ficcao", "Leitor Critico", "Leitor de Best-sellers", "Leitor de Classicos", "Leitor de Genero Epscifico", "Leitor Academico", "Leitor Digital", "Leitor Tradicional", "Leitor de Livros de Bolso", "Leitor Multitarefa", "Outros" });
-            listBox1.Location = new Point(18, 37);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(359, 264);
-            listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listaLeitor;
+            listBoxTipo.ForeColor = SystemColors.InfoText;
+            listBoxTipo.FormattingEnabled = true;
+            listBoxTipo.Items.AddRange(new object[] { "Leitor Casual", "Leitor Avido", "Leitor de Ficcao", "Leitor de Nao Ficcao", "Leitor Critico", "Leitor de Best-sellers", "Leitor de Classicos", "Leitor de Genero Epscifico", "Leitor Academico", "Leitor Digital", "Leitor Tradicional", "Leitor de Livros de Bolso", "Leitor Multitarefa", "Outros" });
+            listBoxTipo.Location = new Point(18, 37);
+            listBoxTipo.Name = "listBoxTipo";
+            listBoxTipo.Size = new Size(359, 264);
+            listBoxTipo.TabIndex = 0;
+            listBoxTipo.SelectedIndexChanged += listaLeitor;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(467, 272);
+            button2.Name = "button2";
+            button2.Size = new Size(116, 29);
+            button2.TabIndex = 3;
+            button2.Text = "Add Exemplar";
+            button2.UseVisualStyleBackColor = true;
             // 
             // Funcionario
             // 
             Funcionario.Controls.Add(label11);
-            Funcionario.Controls.Add(textBox2);
+            Funcionario.Controls.Add(textBoxFuncao);
             Funcionario.Controls.Add(label10);
             Funcionario.Controls.Add(label9);
-            Funcionario.Controls.Add(numericUpDown2);
-            Funcionario.Controls.Add(numericUpDown1);
+            Funcionario.Controls.Add(numericUpDownHoraria);
+            Funcionario.Controls.Add(numericUpDownSalario);
             Funcionario.Controls.Add(label8);
             Funcionario.Controls.Add(cargoFuncionario);
             Funcionario.Location = new Point(4, 29);
             Funcionario.Name = "Funcionario";
             Funcionario.Padding = new Padding(3);
-            Funcionario.Size = new Size(373, 316);
+            Funcionario.Size = new Size(932, 316);
             Funcionario.TabIndex = 1;
             Funcionario.Text = "Funcionario";
             Funcionario.UseVisualStyleBackColor = true;
@@ -259,13 +285,13 @@
             label11.TabIndex = 7;
             label11.Text = "Funcao";
             // 
-            // textBox2
+            // textBoxFuncao
             // 
-            textBox2.Location = new Point(21, 271);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 6;
-            textBox2.TextChanged += funcaoFuncionario;
+            textBoxFuncao.Location = new Point(21, 271);
+            textBoxFuncao.Name = "textBoxFuncao";
+            textBoxFuncao.Size = new Size(125, 27);
+            textBoxFuncao.TabIndex = 6;
+            textBoxFuncao.TextChanged += funcaoFuncionario;
             // 
             // label10
             // 
@@ -285,27 +311,27 @@
             label9.TabIndex = 4;
             label9.Text = "Salario";
             // 
-            // numericUpDown2
+            // numericUpDownHoraria
             // 
-            numericUpDown2.Location = new Point(21, 190);
-            numericUpDown2.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(150, 27);
-            numericUpDown2.TabIndex = 3;
-            numericUpDown2.Value = new decimal(new int[] { 80, 0, 0, 0 });
-            numericUpDown2.ValueChanged += cargaHorariaFuncionario;
+            numericUpDownHoraria.Location = new Point(21, 190);
+            numericUpDownHoraria.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDownHoraria.Name = "numericUpDownHoraria";
+            numericUpDownHoraria.Size = new Size(150, 27);
+            numericUpDownHoraria.TabIndex = 3;
+            numericUpDownHoraria.Value = new decimal(new int[] { 80, 0, 0, 0 });
+            numericUpDownHoraria.ValueChanged += cargaHorariaFuncionario;
             // 
-            // numericUpDown1
+            // numericUpDownSalario
             // 
-            numericUpDown1.DecimalPlaces = 2;
-            numericUpDown1.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            numericUpDown1.Location = new Point(21, 112);
-            numericUpDown1.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 27);
-            numericUpDown1.TabIndex = 2;
-            numericUpDown1.Value = new decimal(new int[] { 1000, 0, 0, 0 });
-            numericUpDown1.ValueChanged += salarioFuncionario;
+            numericUpDownSalario.DecimalPlaces = 2;
+            numericUpDownSalario.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDownSalario.Location = new Point(21, 112);
+            numericUpDownSalario.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDownSalario.Name = "numericUpDownSalario";
+            numericUpDownSalario.Size = new Size(150, 27);
+            numericUpDownSalario.TabIndex = 2;
+            numericUpDownSalario.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDownSalario.ValueChanged += salarioFuncionario;
             // 
             // label8
             // 
@@ -338,6 +364,26 @@
             panel3.Size = new Size(1335, 65);
             panel3.TabIndex = 2;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.Red;
+            button5.Location = new Point(1095, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(237, 59);
+            button5.TabIndex = 2;
+            button5.Text = "Excluir";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.LightGreen;
+            button4.Location = new Point(779, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(310, 59);
+            button4.TabIndex = 1;
+            button4.Text = "Editar";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             button1.BackColor = SystemColors.GradientInactiveCaption;
@@ -358,52 +404,6 @@
             label1.TabIndex = 0;
             label1.Text = "Pessoa";
             // 
-            // button2
-            // 
-            button2.Location = new Point(467, 272);
-            button2.Name = "button2";
-            button2.Size = new Size(116, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Add Exemplar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(699, 272);
-            button3.Name = "button3";
-            button3.Size = new Size(111, 29);
-            button3.TabIndex = 4;
-            button3.Text = "Del Exemplar";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.DarkGray;
-            panel4.Location = new Point(383, 37);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(543, 229);
-            panel4.TabIndex = 5;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.LightGreen;
-            button4.Location = new Point(779, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(310, 59);
-            button4.TabIndex = 1;
-            button4.Text = "Editar";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.Red;
-            button5.Location = new Point(1095, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(237, 59);
-            button5.TabIndex = 2;
-            button5.Text = "Excluir";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // TelaPessoa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -420,13 +420,13 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
+            tabControlPessoa.ResumeLayout(false);
             Leitor.ResumeLayout(false);
             Leitor.PerformLayout();
             Funcionario.ResumeLayout(false);
             Funcionario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHoraria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSalario).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -441,28 +441,28 @@
         private PageSetupDialog pageSetupDialog1;
         private Label label2;
         private Label label1;
-        private TextBox textBox3;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox1;
+        private TextBox textBoxEmail;
+        private DateTimePicker dateTimePickeNascimento;
+        private TextBox textBoxNome;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
-        private MaskedTextBox maskedTextBox2;
-        private MaskedTextBox maskedTextBox1;
-        private TabControl tabControl1;
+        private MaskedTextBox maskedTextBoxTelefone;
+        private MaskedTextBox maskedTextBoxCPF;
+        private TabControl tabControlPessoa;
         private TabPage Leitor;
         private TabPage Funcionario;
-        private ListBox listBox1;
+        private ListBox listBoxTipo;
         private Label label7;
         private Label label10;
         private Label label9;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownHoraria;
+        private NumericUpDown numericUpDownSalario;
         private Label label8;
         private ComboBox cargoFuncionario;
         private Label label11;
-        private TextBox textBox2;
+        private TextBox textBoxFuncao;
         private Panel panel4;
         private Button button3;
         private Button button2;

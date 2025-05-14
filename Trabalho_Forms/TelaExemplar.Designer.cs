@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
             generoExemplar = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
+            numericUpDownPublicacao = new NumericUpDown();
             statusExemplar = new ComboBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            textBoxEditora = new TextBox();
+            textBoxEscritor = new TextBox();
+            textBoxSubTitulo = new TextBox();
+            textBoxTitulo = new TextBox();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -46,52 +48,50 @@
             label3 = new Label();
             label2 = new Label();
             panel3 = new Panel();
-            tabControl1 = new TabControl();
+            tabControlExemplar = new TabControl();
             Livro = new TabPage();
             painalEbook = new Panel();
-            textBox7 = new TextBox();
+            textBoxURL = new TextBox();
             label19 = new Label();
-            numericUpDown6 = new NumericUpDown();
+            numericUpDownTamanho = new NumericUpDown();
             label18 = new Label();
-            comboBox4 = new ComboBox();
+            comboBoxFormato = new ComboBox();
             label17 = new Label();
             checkEBook = new CheckBox();
-            textBox5 = new TextBox();
+            textBoxISBN = new TextBox();
             label11 = new Label();
             label10 = new Label();
-            comboBox3 = new ComboBox();
-            numericUpDown2 = new NumericUpDown();
+            comboBoxCapa = new ComboBox();
+            numericUpDownPaginas = new NumericUpDown();
             label9 = new Label();
             Revista = new TabPage();
             label13 = new Label();
-            numericUpDown4 = new NumericUpDown();
+            numericUpDownPagina = new NumericUpDown();
             label12 = new Label();
-            numericUpDown3 = new NumericUpDown();
+            numericUpDownEdicao = new NumericUpDown();
             HQ = new TabPage();
-            textBox6 = new TextBox();
+            textBoxIlustrador = new TextBox();
             label15 = new Label();
             label14 = new Label();
-            numericUpDown5 = new NumericUpDown();
+            numericUpDownEdicao2 = new NumericUpDown();
             Generico = new TabPage();
             listaGenerico = new ListBox();
             label16 = new Label();
             label1 = new Label();
-            button2 = new Button();
-            button3 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPublicacao).BeginInit();
             panel3.SuspendLayout();
-            tabControl1.SuspendLayout();
+            tabControlExemplar.SuspendLayout();
             Livro.SuspendLayout();
             painalEbook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTamanho).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPaginas).BeginInit();
             Revista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPagina).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdicao).BeginInit();
             HQ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdicao2).BeginInit();
             Generico.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,6 +105,26 @@
             panel1.Size = new Size(776, 76);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Firebrick;
+            button3.Location = new Point(594, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(175, 70);
+            button3.TabIndex = 2;
+            button3.Text = "Excluir";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LimeGreen;
+            button2.Location = new Point(389, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(199, 70);
+            button2.TabIndex = 1;
+            button2.Text = "Editar";
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -120,12 +140,12 @@
             // panel2
             // 
             panel2.Controls.Add(generoExemplar);
-            panel2.Controls.Add(numericUpDown1);
+            panel2.Controls.Add(numericUpDownPublicacao);
             panel2.Controls.Add(statusExemplar);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(textBoxEditora);
+            panel2.Controls.Add(textBoxEscritor);
+            panel2.Controls.Add(textBoxSubTitulo);
+            panel2.Controls.Add(textBoxTitulo);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
@@ -149,15 +169,15 @@
             generoExemplar.TabIndex = 18;
             generoExemplar.SelectedIndexChanged += GeneroExemplar;
             // 
-            // numericUpDown1
+            // numericUpDownPublicacao
             // 
-            numericUpDown1.Location = new Point(3, 227);
-            numericUpDown1.Maximum = new decimal(new int[] { 2026, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(165, 27);
-            numericUpDown1.TabIndex = 17;
-            numericUpDown1.Value = new decimal(new int[] { 2025, 0, 0, 0 });
-            numericUpDown1.ValueChanged += AnoPublicacaoExemplar;
+            numericUpDownPublicacao.Location = new Point(3, 227);
+            numericUpDownPublicacao.Maximum = new decimal(new int[] { 2026, 0, 0, 0 });
+            numericUpDownPublicacao.Name = "numericUpDownPublicacao";
+            numericUpDownPublicacao.Size = new Size(165, 27);
+            numericUpDownPublicacao.TabIndex = 17;
+            numericUpDownPublicacao.Value = new decimal(new int[] { 2025, 0, 0, 0 });
+            numericUpDownPublicacao.ValueChanged += AnoPublicacaoExemplar;
             // 
             // statusExemplar
             // 
@@ -170,37 +190,37 @@
             statusExemplar.TabIndex = 16;
             statusExemplar.SelectedIndexChanged += StatusExemplar;
             // 
-            // textBox4
+            // textBoxEditora
             // 
-            textBox4.Location = new Point(3, 175);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(326, 27);
-            textBox4.TabIndex = 14;
-            textBox4.TextChanged += EditoraExemplar;
+            textBoxEditora.Location = new Point(3, 175);
+            textBoxEditora.Name = "textBoxEditora";
+            textBoxEditora.Size = new Size(326, 27);
+            textBoxEditora.TabIndex = 14;
+            textBoxEditora.TextChanged += EditoraExemplar;
             // 
-            // textBox3
+            // textBoxEscritor
             // 
-            textBox3.Location = new Point(3, 124);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(326, 27);
-            textBox3.TabIndex = 13;
-            textBox3.TextChanged += EscritorExemplar;
+            textBoxEscritor.Location = new Point(3, 124);
+            textBoxEscritor.Name = "textBoxEscritor";
+            textBoxEscritor.Size = new Size(326, 27);
+            textBoxEscritor.TabIndex = 13;
+            textBoxEscritor.TextChanged += EscritorExemplar;
             // 
-            // textBox2
+            // textBoxSubTitulo
             // 
-            textBox2.Location = new Point(3, 75);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(326, 27);
-            textBox2.TabIndex = 12;
-            textBox2.TextChanged += SubTituloExemplar;
+            textBoxSubTitulo.Location = new Point(3, 75);
+            textBoxSubTitulo.Name = "textBoxSubTitulo";
+            textBoxSubTitulo.Size = new Size(326, 27);
+            textBoxSubTitulo.TabIndex = 12;
+            textBoxSubTitulo.TextChanged += SubTituloExemplar;
             // 
-            // textBox1
+            // textBoxTitulo
             // 
-            textBox1.Location = new Point(3, 24);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(326, 27);
-            textBox1.TabIndex = 11;
-            textBox1.TextChanged += TituloExemplar;
+            textBoxTitulo.Location = new Point(3, 24);
+            textBoxTitulo.Name = "textBoxTitulo";
+            textBoxTitulo.Size = new Size(326, 27);
+            textBoxTitulo.TabIndex = 11;
+            textBoxTitulo.TextChanged += TituloExemplar;
             // 
             // label8
             // 
@@ -267,33 +287,33 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(tabControl1);
+            panel3.Controls.Add(tabControlExemplar);
             panel3.Location = new Point(402, 12);
             panel3.Name = "panel3";
             panel3.Size = new Size(386, 405);
             panel3.TabIndex = 2;
             // 
-            // tabControl1
+            // tabControlExemplar
             // 
-            tabControl1.Controls.Add(Livro);
-            tabControl1.Controls.Add(Revista);
-            tabControl1.Controls.Add(HQ);
-            tabControl1.Controls.Add(Generico);
-            tabControl1.Location = new Point(3, 7);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(380, 395);
-            tabControl1.TabIndex = 0;
+            tabControlExemplar.Controls.Add(Livro);
+            tabControlExemplar.Controls.Add(Revista);
+            tabControlExemplar.Controls.Add(HQ);
+            tabControlExemplar.Controls.Add(Generico);
+            tabControlExemplar.Location = new Point(3, 7);
+            tabControlExemplar.Name = "tabControlExemplar";
+            tabControlExemplar.SelectedIndex = 0;
+            tabControlExemplar.Size = new Size(380, 395);
+            tabControlExemplar.TabIndex = 0;
             // 
             // Livro
             // 
             Livro.Controls.Add(painalEbook);
             Livro.Controls.Add(checkEBook);
-            Livro.Controls.Add(textBox5);
+            Livro.Controls.Add(textBoxISBN);
             Livro.Controls.Add(label11);
             Livro.Controls.Add(label10);
-            Livro.Controls.Add(comboBox3);
-            Livro.Controls.Add(numericUpDown2);
+            Livro.Controls.Add(comboBoxCapa);
+            Livro.Controls.Add(numericUpDownPaginas);
             Livro.Controls.Add(label9);
             Livro.Location = new Point(4, 29);
             Livro.Name = "Livro";
@@ -307,11 +327,11 @@
             // painalEbook
             // 
             painalEbook.CausesValidation = false;
-            painalEbook.Controls.Add(textBox7);
+            painalEbook.Controls.Add(textBoxURL);
             painalEbook.Controls.Add(label19);
-            painalEbook.Controls.Add(numericUpDown6);
+            painalEbook.Controls.Add(numericUpDownTamanho);
             painalEbook.Controls.Add(label18);
-            painalEbook.Controls.Add(comboBox4);
+            painalEbook.Controls.Add(comboBoxFormato);
             painalEbook.Controls.Add(label17);
             painalEbook.Location = new Point(6, 191);
             painalEbook.Name = "painalEbook";
@@ -319,13 +339,13 @@
             painalEbook.TabIndex = 21;
             painalEbook.Paint += painalEbook_Paint;
             // 
-            // textBox7
+            // textBoxURL
             // 
-            textBox7.Location = new Point(3, 143);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(354, 27);
-            textBox7.TabIndex = 19;
-            textBox7.TextChanged += URLEbook;
+            textBoxURL.Location = new Point(3, 143);
+            textBoxURL.Name = "textBoxURL";
+            textBoxURL.Size = new Size(354, 27);
+            textBoxURL.TabIndex = 19;
+            textBoxURL.TextChanged += URLEbook;
             // 
             // label19
             // 
@@ -336,14 +356,14 @@
             label19.TabIndex = 20;
             label19.Text = "URL";
             // 
-            // numericUpDown6
+            // numericUpDownTamanho
             // 
-            numericUpDown6.Location = new Point(3, 79);
-            numericUpDown6.Maximum = new decimal(new int[] { 2026, 0, 0, 0 });
-            numericUpDown6.Name = "numericUpDown6";
-            numericUpDown6.Size = new Size(165, 27);
-            numericUpDown6.TabIndex = 19;
-            numericUpDown6.ValueChanged += TamanhoEbook;
+            numericUpDownTamanho.Location = new Point(3, 79);
+            numericUpDownTamanho.Maximum = new decimal(new int[] { 2026, 0, 0, 0 });
+            numericUpDownTamanho.Name = "numericUpDownTamanho";
+            numericUpDownTamanho.Size = new Size(165, 27);
+            numericUpDownTamanho.TabIndex = 19;
+            numericUpDownTamanho.ValueChanged += TamanhoEbook;
             // 
             // label18
             // 
@@ -354,16 +374,16 @@
             label18.TabIndex = 18;
             label18.Text = "Tamanho";
             // 
-            // comboBox4
+            // comboBoxFormato
             // 
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "Portable Document Format (PDF)", "Electronic Publication (ePUB)", "Mobipocket (MOBI)", "Kindle Package Format (KPF)", "Outros" });
-            comboBox4.Location = new Point(3, 30);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(354, 28);
-            comboBox4.TabIndex = 6;
-            comboBox4.SelectedIndexChanged += FormatoEbook;
+            comboBoxFormato.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFormato.FormattingEnabled = true;
+            comboBoxFormato.Items.AddRange(new object[] { "Portable Document Format (PDF)", "Electronic Publication (ePUB)", "Mobipocket (MOBI)", "Kindle Package Format (KPF)", "Outros" });
+            comboBoxFormato.Location = new Point(3, 30);
+            comboBoxFormato.Name = "comboBoxFormato";
+            comboBoxFormato.Size = new Size(354, 28);
+            comboBoxFormato.TabIndex = 6;
+            comboBoxFormato.SelectedIndexChanged += FormatoEbook;
             // 
             // label17
             // 
@@ -386,13 +406,13 @@
             checkEBook.CheckedChanged += TelaExemplar_Load;
             checkEBook.Paint += painalEbook_Paint;
             // 
-            // textBox5
+            // textBoxISBN
             // 
-            textBox5.Location = new Point(6, 133);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(326, 27);
-            textBox5.TabIndex = 19;
-            textBox5.TextChanged += ISBNLivro;
+            textBoxISBN.Location = new Point(6, 133);
+            textBoxISBN.Name = "textBoxISBN";
+            textBoxISBN.Size = new Size(326, 27);
+            textBoxISBN.TabIndex = 19;
+            textBoxISBN.TextChanged += ISBNLivro;
             // 
             // label11
             // 
@@ -412,25 +432,25 @@
             label10.TabIndex = 3;
             label10.Text = "Tipo de capa";
             // 
-            // comboBox3
+            // comboBoxCapa
             // 
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Capa Dura", "Capa Flexível ou Brochura", "Capa de Papel Cartão", "Capa com Sobrecapa (Jacket) • Capa com Relevo", "Capa com Verniz UV", "Capa Metalizada", "Capa de Tecido", "Capa com Janela", "Capa Transparente", "Capa Digital" });
-            comboBox3.Location = new Point(6, 79);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(151, 28);
-            comboBox3.TabIndex = 2;
-            comboBox3.SelectedIndexChanged += TipoCapaLivro;
+            comboBoxCapa.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCapa.FormattingEnabled = true;
+            comboBoxCapa.Items.AddRange(new object[] { "Capa Dura", "Capa Flexível ou Brochura", "Capa de Papel Cartão", "Capa com Sobrecapa (Jacket) • Capa com Relevo", "Capa com Verniz UV", "Capa Metalizada", "Capa de Tecido", "Capa com Janela", "Capa Transparente", "Capa Digital" });
+            comboBoxCapa.Location = new Point(6, 79);
+            comboBoxCapa.Name = "comboBoxCapa";
+            comboBoxCapa.Size = new Size(151, 28);
+            comboBoxCapa.TabIndex = 2;
+            comboBoxCapa.SelectedIndexChanged += TipoCapaLivro;
             // 
-            // numericUpDown2
+            // numericUpDownPaginas
             // 
-            numericUpDown2.Location = new Point(6, 26);
-            numericUpDown2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(150, 27);
-            numericUpDown2.TabIndex = 1;
-            numericUpDown2.ValueChanged += PaginasLivro;
+            numericUpDownPaginas.Location = new Point(6, 26);
+            numericUpDownPaginas.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDownPaginas.Name = "numericUpDownPaginas";
+            numericUpDownPaginas.Size = new Size(150, 27);
+            numericUpDownPaginas.TabIndex = 1;
+            numericUpDownPaginas.ValueChanged += PaginasLivro;
             // 
             // label9
             // 
@@ -444,9 +464,9 @@
             // Revista
             // 
             Revista.Controls.Add(label13);
-            Revista.Controls.Add(numericUpDown4);
+            Revista.Controls.Add(numericUpDownPagina);
             Revista.Controls.Add(label12);
-            Revista.Controls.Add(numericUpDown3);
+            Revista.Controls.Add(numericUpDownEdicao);
             Revista.Location = new Point(4, 29);
             Revista.Name = "Revista";
             Revista.Padding = new Padding(3);
@@ -464,14 +484,14 @@
             label13.TabIndex = 21;
             label13.Text = "Paginas";
             // 
-            // numericUpDown4
+            // numericUpDownPagina
             // 
-            numericUpDown4.Location = new Point(6, 111);
-            numericUpDown4.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(150, 27);
-            numericUpDown4.TabIndex = 20;
-            numericUpDown4.ValueChanged += PaginasRevista;
+            numericUpDownPagina.Location = new Point(6, 111);
+            numericUpDownPagina.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDownPagina.Name = "numericUpDownPagina";
+            numericUpDownPagina.Size = new Size(150, 27);
+            numericUpDownPagina.TabIndex = 20;
+            numericUpDownPagina.ValueChanged += PaginasRevista;
             // 
             // label12
             // 
@@ -482,21 +502,21 @@
             label12.TabIndex = 19;
             label12.Text = "Edicao";
             // 
-            // numericUpDown3
+            // numericUpDownEdicao
             // 
-            numericUpDown3.Location = new Point(6, 39);
-            numericUpDown3.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(150, 27);
-            numericUpDown3.TabIndex = 0;
-            numericUpDown3.ValueChanged += EdicaoRevista;
+            numericUpDownEdicao.Location = new Point(6, 39);
+            numericUpDownEdicao.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDownEdicao.Name = "numericUpDownEdicao";
+            numericUpDownEdicao.Size = new Size(150, 27);
+            numericUpDownEdicao.TabIndex = 0;
+            numericUpDownEdicao.ValueChanged += EdicaoRevista;
             // 
             // HQ
             // 
-            HQ.Controls.Add(textBox6);
+            HQ.Controls.Add(textBoxIlustrador);
             HQ.Controls.Add(label15);
             HQ.Controls.Add(label14);
-            HQ.Controls.Add(numericUpDown5);
+            HQ.Controls.Add(numericUpDownEdicao2);
             HQ.Location = new Point(4, 29);
             HQ.Name = "HQ";
             HQ.Size = new Size(372, 362);
@@ -504,13 +524,13 @@
             HQ.Text = "HQ";
             HQ.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // textBoxIlustrador
             // 
-            textBox6.Location = new Point(3, 111);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(326, 27);
-            textBox6.TabIndex = 19;
-            textBox6.TextChanged += IlustradorHQ;
+            textBoxIlustrador.Location = new Point(3, 111);
+            textBoxIlustrador.Name = "textBoxIlustrador";
+            textBoxIlustrador.Size = new Size(326, 27);
+            textBoxIlustrador.TabIndex = 19;
+            textBoxIlustrador.TextChanged += IlustradorHQ;
             // 
             // label15
             // 
@@ -530,14 +550,14 @@
             label14.TabIndex = 21;
             label14.Text = "Edicao";
             // 
-            // numericUpDown5
+            // numericUpDownEdicao2
             // 
-            numericUpDown5.Location = new Point(3, 39);
-            numericUpDown5.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown5.Name = "numericUpDown5";
-            numericUpDown5.Size = new Size(150, 27);
-            numericUpDown5.TabIndex = 20;
-            numericUpDown5.ValueChanged += EdicaoHQ;
+            numericUpDownEdicao2.Location = new Point(3, 39);
+            numericUpDownEdicao2.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDownEdicao2.Name = "numericUpDownEdicao2";
+            numericUpDownEdicao2.Size = new Size(150, 27);
+            numericUpDownEdicao2.TabIndex = 20;
+            numericUpDownEdicao2.ValueChanged += EdicaoHQ;
             // 
             // Generico
             // 
@@ -579,26 +599,6 @@
             label1.Text = "Exemplar";
             label1.Click += label1_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.LimeGreen;
-            button2.Location = new Point(389, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(199, 70);
-            button2.TabIndex = 1;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Firebrick;
-            button3.Location = new Point(594, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(175, 70);
-            button3.TabIndex = 2;
-            button3.Text = "Excluir";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // TelaExemplar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -614,22 +614,22 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPublicacao).EndInit();
             panel3.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
+            tabControlExemplar.ResumeLayout(false);
             Livro.ResumeLayout(false);
             Livro.PerformLayout();
             painalEbook.ResumeLayout(false);
             painalEbook.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTamanho).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPaginas).EndInit();
             Revista.ResumeLayout(false);
             Revista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPagina).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdicao).EndInit();
             HQ.ResumeLayout(false);
             HQ.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdicao2).EndInit();
             Generico.ResumeLayout(false);
             Generico.PerformLayout();
             ResumeLayout(false);
@@ -646,44 +646,44 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxEditora;
+        private TextBox textBoxEscritor;
+        private TextBox textBoxSubTitulo;
+        private TextBox textBoxTitulo;
         private Label label8;
         private Label label7;
         private Label label6;
         private Label label5;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownPublicacao;
         private ComboBox statusExemplar;
         private ComboBox generoExemplar;
-        private TabControl tabControl1;
+        private TabControl tabControlExemplar;
         private TabPage Livro;
         private Label label10;
-        private ComboBox comboBox3;
-        private NumericUpDown numericUpDown2;
+        private ComboBox comboBoxCapa;
+        private NumericUpDown numericUpDownPaginas;
         private Label label9;
         private TabPage Revista;
         private TabPage HQ;
         private TabPage Generico;
-        private TextBox textBox5;
+        private TextBox textBoxISBN;
         private Label label11;
         private Label label13;
-        private NumericUpDown numericUpDown4;
+        private NumericUpDown numericUpDownPagina;
         private Label label12;
-        private NumericUpDown numericUpDown3;
-        private TextBox textBox6;
+        private NumericUpDown numericUpDownEdicao;
+        private TextBox textBoxIlustrador;
         private Label label15;
         private Label label14;
-        private NumericUpDown numericUpDown5;
+        private NumericUpDown numericUpDownEdicao2;
         private Label label16;
         private ListBox listaGenerico;
-        private ComboBox comboBox4;
+        private ComboBox comboBoxFormato;
         private Label label17;
         private CheckBox checkEBook;
-        private TextBox textBox7;
+        private TextBox textBoxURL;
         private Label label19;
-        private NumericUpDown numericUpDown6;
+        private NumericUpDown numericUpDownTamanho;
         private Label label18;
         public Panel painalEbook;
         private Button button3;

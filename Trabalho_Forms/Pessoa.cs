@@ -12,13 +12,13 @@ public abstract class Pessoa
     string cpf,
     string email,
     string telefone)
-
     {
         Nome = nome;
         Nascimento = nascimento;
         Cpf = cpf;
         Email = email;
-        Telefone
+        Telefone = telefone;
+    }
     public abstract void AdicionaExemplarLeitor(Exemplar exemplar, Leitor leitor);
     public abstract void RemoveExemplarLeitor(Exemplar exemplar, Leitor leitor);
     public abstract void EditaExemplarLeitor(Exemplar exemplar, Leitor leitor);

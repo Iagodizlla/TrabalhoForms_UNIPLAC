@@ -1,4 +1,5 @@
 ﻿using ProjetoFinalBiblioteca;
+using System.Windows.Forms.VisualStyles;
 
 namespace Trabalho_Forms
 {
@@ -38,7 +39,64 @@ namespace Trabalho_Forms
 
         private void botaoSalvarExemplar(object sender, EventArgs e)
         {
-
+            // leitura dos valores dos campos
+            string auxTitulo = textBoxTitulo.Text;
+            string auxSubTitulo = textBoxSubTitulo.Text;
+            string auxEscritor = textBoxEscritor.Text;
+            string auxEditora = textBoxEditora.Text;
+            int auxAnoPublicacao = Convert.ToInt32(numericUpDownPublicacao.Value);
+            string auxGenero = generoExemplar.Text;
+            int auxStatus = (int)(EnumExemplarStatus)Enum.Parse(typeof(EnumExemplarStatus), statusExemplar.Text);
+            if (tabControlExemplar.SelectedIndex == 0)
+            {
+                // livro e ebook
+                // leitura dos valores dos campos
+                int auxPaginas = Convert.ToInt32(numericUpDownPaginas.Value);
+                string auxTipoCapa = comboBoxCapa.Text;
+                string auxIsbn = textBoxISBN.Text;
+                if (!checkEBook.Checked)
+                {
+                    // livro
+                    // cria o objeto e já adiciona no List
+                    exemplares.Add(new Livro(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxPaginas, auxTipoCapa, auxIsbn));
+                }
+                else
+                {
+                    // ebook
+                    // leitura dos valores dos campos
+                    string auxFormato = comboBoxFormato.Text;
+                    decimal auxTamanho = numericUpDownTamanho.Value;
+                    string auxUrl = textBoxURL.Text;
+                    // cria o objeto e já adiciona no List
+                    exemplares.Add(new Ebook(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxPaginas, auxTipoCapa, auxIsbn, auxFormato, auxTamanho, auxUrl));
+                }
+            }
+            else if (tabControlExemplar.SelectedIndex == 1)
+            {
+                // revista
+                // leitura dos valores dos campos
+                int auxEdicaoRevista = Convert.ToInt32(numericUpDownEdicao.Value);
+                int auxPaginasRevista = Convert.ToInt32(numericUpDownPagina.Value);
+                // cria o objeto e já adiciona no List
+                exemplares.Add(new Revista(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxEdicaoRevista, auxPaginasRevista));
+            }
+            else if (tabControlExemplar.SelectedIndex == 2)
+            {
+                // hq
+                // leitura dos valores dos campos
+                int auxEdicaoHq = Convert.ToInt32(numericUpDownEdicao2.Value);
+                string auxIlustrador = textBoxIlustrador.Text;
+                // cria o objeto e já adiciona no List
+                exemplares.Add(new Hq(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxEdicaoHq, auxIlustrador));
+            }
+            else if (tabControlExemplar.SelectedIndex == 3)
+            {
+                // generico
+                // leitura dos valores dos campos
+                int auxTipo = (int)(EnumGenericoTipo)Enum.Parse(typeof(EnumGenericoTipo), listaGenerico.Text);
+                // cria o objeto e já adiciona no List
+                exemplares.Add(new Generico(auxTitulo, auxSubTitulo, auxEscritor, auxEditora, auxAnoPublicacao, auxGenero, auxStatus, auxTipo));
+            }
         }
 
         private void painalEbook_Paint(object sender, PaintEventArgs e)

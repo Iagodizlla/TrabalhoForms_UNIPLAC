@@ -84,7 +84,33 @@ public partial class TelaPessoa : Form
 
     private void botaoSalvarPessoa(object sender, EventArgs e)
     {
-
+        // leitura dos valores dos campos
+        string auxNome = textBoxNome.Text;
+        DateTime auxData = dateTimePickeNascimento.Value;
+        string auxCpf = maskedTextBoxCPF.Text;
+        string auxEmail = textBoxEmail.Text;
+        string auxTelefone = maskedTextBoxTelefone.Text;
+        if (tabControlPessoa.SelectedIndex == 0)
+        {
+            // leitura dos valores dos campos
+            string auxTipo = listBoxTipo.SelectedItem.ToString();
+            // cria o objeto leitor
+            var leitor = new Leitor(auxNome, auxData, auxCpf, auxEmail, auxTelefone, auxTipo);
+            // adicionar no list
+            leitores.Add(leitor);
+        }
+        else
+        {
+            // leitura dos valores dos campos
+            int auxCargo = (int)(EnumFuncionarioCargo)Enum.Parse(typeof(EnumFuncionarioCargo), cargoFuncionario.Text);
+            decimal auxSalario = numericUpDownSalario.Value;
+            int auxCargaHoraria = Convert.ToInt32(numericUpDownHoraria.Value);
+            string auxFuncao = textBoxFuncao.Text;
+            // cria o objeto funcionário e já adiciona diretamente
+            funcionarios.Add(new Funcionario(auxNome, auxData, auxCpf, auxEmail, auxTelefone, auxCargo, auxSalario, auxCargaHoraria, auxFuncao));
+        }
+        MessageBox.Show("Pessoa cadastrada com sucesso!");
+        Close();
     }
 }
 //Iago Henrique Schlemper

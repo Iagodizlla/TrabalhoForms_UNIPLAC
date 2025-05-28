@@ -118,6 +118,7 @@
             dataGridView2.Size = new Size(969, 381);
             dataGridView2.TabIndex = 1;
             dataGridView2.CellContentClick += dataGridViewLeitores;
+            dataGridView2.Click += button2_Click;
             // 
             // tabPage3
             // 

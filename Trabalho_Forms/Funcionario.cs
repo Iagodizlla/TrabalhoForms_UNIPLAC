@@ -6,6 +6,7 @@ public class Funcionario : Pessoa
     public decimal Salario { get; set; }
     public int CargaHoraria { get; set; }
     public string Funcao { get; set; }
+
     public Funcionario(string nome,
     DateTime nascimento,
     string cpf,
@@ -15,13 +16,13 @@ public class Funcionario : Pessoa
     decimal salario,
     int cargaHoraria,
     string funcao) : base(nome, nascimento, cpf, email, telefone)
-
     {
         Cargo = cargo;
         Salario = salario;
         CargaHoraria = cargaHoraria;
         Funcao = funcao;
     }
+
     public void NovoLeitor(Leitor leitor) { }
     public void ExcluiLeitor(Leitor leitor) { }
     public void NovoFuncionario(Funcionario funcionario) { }

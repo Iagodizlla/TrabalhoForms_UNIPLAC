@@ -78,29 +78,66 @@ public partial class Biblioteca : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        TelaPessoa telaP = new TelaPessoa(funcionarios, leitores); // Cria a nova tela
-        telaP.ShowDialog();
+        // armazena o objeto selecionado
+        var aux = new TelaPessoa(funcionarios, leitores);
+        aux.StartPosition = FormStartPosition.CenterParent;
+        aux.ShowDialog();
     }
 
     private void button2_Click(object sender, EventArgs e)
     {
-        TelaExemplar telaE = new TelaExemplar(exemplares); // Cria a nova tela
-        telaE.ShowDialog();
+        var aux = new TelaExemplar(exemplares);
+        aux.StartPosition = FormStartPosition.CenterParent;
+        aux.ShowDialog();
     }
 
     private void dataGridViewFuncionarios(object sender, DataGridViewCellEventArgs e)
     {
+        // armazena o objeto selecionado
 
+        var funcionario = dataGridView1.CurrentRow.DataBoundItem as Funcionario;
+
+        // validar se o objeto é nulo
+        if (funcionario == null)
+
+        {
+            MessageBox.Show("Selecione um funcionário");
+            return;
+        }
+
+        //MessageBox.Show($"{ funcionario.GetType().Name }, {funcionario.Nome}");
+        // abre a tela de edição de funcionário com o objeto selecionado
+        var form = new TelaPessoa(funcionarios, funcionario);
+        form.StartPosition = FormStartPosition.CenterParent;
+        form.ShowDialog();
     }
 
     private void dataGridViewLeitores(object sender, DataGridViewCellEventArgs e)
     {
-
+        var leitor = dataGridView2.CurrentRow.DataBoundItem as Leitor;
     }
 
     private void dataGridViewExemplares(object sender, DataGridViewCellEventArgs e)
     {
+        // armazena o objeto selecionado
 
+        var exemplar = dataGridView3.CurrentRow.DataBoundItem as Exemplar;
+
+        // validar se o objeto é nulo
+
+        if (exemplar == null)
+
+        {
+            MessageBox.Show("Selecione um exemplar");
+            return;
+        }
+        // como teste, mostra o tipo do objeto e o nome
+
+        //MessageBox.Show($"{exemplar.GetType().Name}, {exemplar.Titulo}");
+        // abre a tela de edição de exemplar com o objeto selecionado
+        var form = new TelaExemplar(exemplares);
+        form.StartPosition = FormStartPosition.CenterParent;
+        form.ShowDialog();
     }
 
     private void Biblioteca_Activated(object sender, EventArgs e)

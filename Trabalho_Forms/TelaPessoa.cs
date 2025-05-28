@@ -1,4 +1,5 @@
 ﻿using ProjetoFinalBiblioteca;
+using System.Numerics;
 
 namespace Trabalho_Forms;
 
@@ -6,15 +7,44 @@ public partial class TelaPessoa : Form
 {
     public List<Funcionario> funcionarios;
     public List<Leitor> leitores;
+    Funcionario funcionario;
+    Leitor leitor;
+
+
     public TelaPessoa(List<Funcionario> funcionarios, List<Leitor> leitores)
     {
         InitializeComponent();
-
-        // carrega os valores do Enum para o combobox/Listbox
+        // atribui o objeto recebido à variável com escopo de classe
+        this.funcionarios = funcionarios;
+        this.funcionario = funcionario;
+        // carrega os valores do Enum para o combobox
         cargoFuncionario.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
         cargoFuncionario.SelectedIndex = 0;
+
+    }
+
+    public TelaPessoa(List<Funcionario> funcionarios, Funcionario funcionario)
+    {
+        InitializeComponent();
+        // atribui o objeto recebido à variável com escopo de classe
         this.funcionarios = funcionarios;
-        this.leitores = leitores;
+        this.funcionario = funcionario;
+        // carrega os valores do Enum para o combobox
+        cargoFuncionario.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
+        cargoFuncionario.SelectedIndex = 0;
+        // carrega os valores do objeto recebido
+        textBoxNome.Text = funcionario.Nome;
+        dateTimePickeNascimento.Value = funcionario.Nascimento;
+        maskedTextBoxCPF.Text = funcionario.Cpf;
+        textBoxEmail.Text = funcionario.Email;
+        maskedTextBoxTelefone.Text = funcionario.Telefone;
+        cargoFuncionario.Text = "" + (EnumFuncionarioCargo)Enum.Parse(typeof(EnumFuncionarioCargo), funcionario.Cargo.ToString());
+        numericUpDownSalario.Value = funcionario.Salario;
+        numericUpDownHoraria.Value = funcionario.CargaHoraria;
+        textBoxFuncao.Text = funcionario.Funcao;
+        tabControlPessoa.SelectedIndex = 1;
+        tabControlPessoa.TabPages[0].Enabled = false;
+        button1.Enabled = false;
     }
 
     public void Form2_Load(object sender, EventArgs e)
@@ -110,6 +140,56 @@ public partial class TelaPessoa : Form
             funcionarios.Add(new Funcionario(auxNome, auxData, auxCpf, auxEmail, auxTelefone, auxCargo, auxSalario, auxCargaHoraria, auxFuncao));
         }
         MessageBox.Show("Pessoa cadastrada com sucesso!");
+        Close();
+    }
+
+    private void Funcionario_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+        if (tabControlPessoa.SelectedIndex == 0)
+        {
+            // atualiza os dados no objeto
+            leitor.Nome = textBoxNome.Text;
+            leitor.Nascimento = dateTimePickeNascimento.Value;
+            leitor.Cpf = maskedTextBoxCPF.Text;
+            leitor.Email = textBoxEmail.Text;
+            leitor.Telefone = maskedTextBoxTelefone.Text;
+            leitor.Tipo = listBoxTipo.SelectedItem.ToString();
+        }
+        else
+        {
+            // atualiza os dados no objeto
+            funcionario.Nome = textBoxNome.Text;
+            funcionario.Nascimento = dateTimePickeNascimento.Value;
+            funcionario.Cpf = maskedTextBoxCPF.Text;
+            funcionario.Email = textBoxEmail.Text;
+            funcionario.Telefone = maskedTextBoxTelefone.Text;
+            funcionario.Cargo = (int)(EnumFuncionarioCargo)Enum.Parse(typeof(EnumFuncionarioCargo), cargoFuncionario.Text);
+            funcionario.Salario = numericUpDownSalario.Value;
+            funcionario.CargaHoraria = Convert.ToInt32(numericUpDownHoraria.Value);
+            funcionario.Funcao = textBoxFuncao.Text;
+        }
+        MessageBox.Show("Pessoa editada com sucesso!");
+        Close();
+    }
+
+    private void button5_Click(object sender, EventArgs e)
+    {
+        if (tabControlPessoa.SelectedIndex == 0)
+        {
+            // exclui o objeto
+            leitores.Remove(leitor);
+        }
+        else
+        {
+            // exclui o objeto
+            funcionarios.Remove(funcionario);
+        }
+        MessageBox.Show("Pessoa excluída com sucesso!");
         Close();
     }
 }

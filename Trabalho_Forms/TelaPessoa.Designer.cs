@@ -127,7 +127,7 @@
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(3, 39);
+            textBoxNome.Location = new Point(3, 38);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(347, 27);
             textBoxNome.TabIndex = 5;
@@ -275,6 +275,7 @@
             Funcionario.TabIndex = 1;
             Funcionario.Text = "Funcionario";
             Funcionario.UseVisualStyleBackColor = true;
+            Funcionario.Click += Funcionario_Click;
             // 
             // label11
             // 
@@ -373,6 +374,7 @@
             button5.TabIndex = 2;
             button5.Text = "Excluir";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -383,6 +385,7 @@
             button4.TabIndex = 1;
             button4.Text = "Editar";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button1
             // 

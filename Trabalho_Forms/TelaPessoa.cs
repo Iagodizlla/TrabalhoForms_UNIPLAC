@@ -16,10 +16,30 @@ public partial class TelaPessoa : Form
         InitializeComponent();
         // atribui o objeto recebido à variável com escopo de classe
         this.funcionarios = funcionarios;
-        this.funcionario = funcionario;
         // carrega os valores do Enum para o combobox
         cargoFuncionario.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
         cargoFuncionario.SelectedIndex = 0;
+
+    }
+
+    public TelaPessoa(List<Leitor> leitores, Leitor leitor)
+    {
+        InitializeComponent();
+        // atribui o objeto recebido à variável com escopo de classe
+        this.leitores = leitores;
+        this.leitor = leitor;
+        // carrega os valores do objeto recebido
+        listBoxTipo.SelectedIndex = 0;
+        // carrega os valores do Enum para o combobox
+        textBoxNome.Text = leitor.Nome;
+        dateTimePickeNascimento.Value = leitor.Nascimento;
+        maskedTextBoxCPF.Text = leitor.Cpf;
+        textBoxEmail.Text = leitor.Email;
+        maskedTextBoxTelefone.Text = leitor.Telefone;
+        listBoxTipo.SelectedItem = leitor.Tipo;
+        tabControlPessoa.SelectedIndex = 0;
+        tabControlPessoa.TabPages[1].Enabled = false;
+        button1.Enabled = false;
 
     }
 

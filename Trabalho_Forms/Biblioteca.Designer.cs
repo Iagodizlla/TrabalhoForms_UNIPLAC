@@ -34,16 +34,16 @@
             tabPage1 = new TabPage();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
             tabPage3 = new TabPage();
             dataGridView3 = new DataGridView();
+            dataGridView4 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -100,7 +100,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(dataGridView4);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -108,17 +108,6 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Leitores";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(6, 6);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(969, 381);
-            dataGridView2.TabIndex = 1;
-            dataGridView2.CellContentClick += dataGridViewLeitores;
-            dataGridView2.Click += button2_Click;
             // 
             // tabPage3
             // 
@@ -140,6 +129,16 @@
             dataGridView3.TabIndex = 1;
             dataGridView3.CellContentClick += dataGridViewExemplares;
             // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Location = new Point(6, 6);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 51;
+            dataGridView4.Size = new Size(969, 381);
+            dataGridView4.TabIndex = 3;
+            dataGridView4.CellContentClick += dataGridView4_CellContentClick;
+            // 
             // Biblioteca
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -156,9 +155,9 @@
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
         }
 
@@ -171,7 +170,7 @@
         private TabPage tabPage2;
         private TabPage tabPage3;
         private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
         private DataGridView dataGridView3;
+        private DataGridView dataGridView4;
     }
 }

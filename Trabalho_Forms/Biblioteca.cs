@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Trabalho_Forms;
 
 public partial class Biblioteca : Form
@@ -58,12 +60,12 @@ public partial class Biblioteca : Form
         // listar funcionarios no datagridview
         dataGridView1.DataSource = null;
         dataGridView1.DataSource = funcionarios;
-        // listar leitores no datagridview
-        dataGridView2.DataSource = null;
-        dataGridView2.DataSource = leitores;
         // listar exemplares no datagridview
         dataGridView3.DataSource = null;
         dataGridView3.DataSource = exemplares;
+        // listar leitores no datagridview
+        dataGridView4.DataSource = null;
+        dataGridView4.DataSource = leitores;
     }
 
     private void label1_Click(object sender, EventArgs e)
@@ -103,7 +105,7 @@ public partial class Biblioteca : Form
             return;
         }
 
-        MessageBox.Show($"{ funcionario.GetType().Name }, {funcionario.Nome}");
+        MessageBox.Show($"{funcionario.GetType().Name}, {funcionario.Nome}");
         // abre a tela de edição de funcionário com o objeto selecionado
         var form = new TelaPessoa(funcionarios, funcionario);
         form.StartPosition = FormStartPosition.CenterParent;
@@ -112,19 +114,6 @@ public partial class Biblioteca : Form
 
     private void dataGridViewLeitores(object sender, DataGridViewCellEventArgs e)
     {
-        var leitor = dataGridView2.CurrentRow.DataBoundItem as Leitor;
-
-        // validar se o objeto é nulo
-        if (leitor == null)
-        {
-            MessageBox.Show("Selecione um leitor");
-            return;
-        }
-        MessageBox.Show($"{ leitor.GetType().Name }, {leitor.Nome}");
-        // abre a tela de edição de leitor com o objeto selecionado
-        var form = new TelaPessoa(leitores, leitor);
-        form.StartPosition = FormStartPosition.CenterParent;
-        form.ShowDialog();
     }
 
     private void dataGridViewExemplares(object sender, DataGridViewCellEventArgs e)
@@ -154,5 +143,22 @@ public partial class Biblioteca : Form
     private void Biblioteca_Activated(object sender, EventArgs e)
     {
         AtualizarDataGridView();
+    }
+
+    private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        var leitor = dataGridView4.CurrentRow.DataBoundItem as Leitor;
+
+        // validar se o objeto é nulo
+        if (leitor == null)
+        {
+            MessageBox.Show("Selecione um leitor");
+            return;
+        }
+        MessageBox.Show($"{leitor.GetType().Name}, {leitor.Nome}");
+        // abre a tela de edição de leitor com o objeto selecionado
+        var form = new TelaPessoa(leitores, leitor);
+        form.StartPosition = FormStartPosition.CenterParent;
+        form.ShowDialog();
     }
 }

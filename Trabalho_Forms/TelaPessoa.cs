@@ -16,10 +16,13 @@ public partial class TelaPessoa : Form
         InitializeComponent();
         // atribui o objeto recebido à variável com escopo de classe
         this.funcionarios = funcionarios;
+        this.leitores = leitores;
         // carrega os valores do Enum para o combobox
         cargoFuncionario.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
         cargoFuncionario.SelectedIndex = 0;
-
+        // carrega os valores do Enum para o combobox
+        listBoxTipo.DataSource = Enum.GetValues(typeof(EnumGenericoTipo));
+        listBoxTipo.SelectedIndex = 0;
     }
 
     public TelaPessoa(List<Leitor> leitores, Leitor leitor)
@@ -40,7 +43,6 @@ public partial class TelaPessoa : Form
         tabControlPessoa.SelectedIndex = 0;
         tabControlPessoa.TabPages[1].Enabled = false;
         button1.Enabled = false;
-
     }
 
     public TelaPessoa(List<Funcionario> funcionarios, Funcionario funcionario)

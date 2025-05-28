@@ -145,7 +145,7 @@ public partial class Biblioteca : Form
 
         MessageBox.Show($"{exemplar.GetType().Name}, {exemplar.Titulo}");
         // abre a tela de edição de exemplar com o objeto selecionado
-        var form = new TelaExemplar(exemplares);
+        var form = new TelaExemplar(exemplares, exemplar);
         form.StartPosition = FormStartPosition.CenterParent;
         form.ShowDialog();
     }

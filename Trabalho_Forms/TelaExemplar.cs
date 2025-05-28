@@ -7,7 +7,19 @@ namespace Trabalho_Forms
     {
         public List<Exemplar> exemplares;
         Exemplar exemplar;
+
         public TelaExemplar(List<Exemplar> exemplares)
+        {
+            InitializeComponent();
+            // atribui o objeto recebido à variável com escopo de classe
+            this.exemplares = exemplares;
+            // carrega os valores do Enum para o combobox
+            statusExemplar.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
+            statusExemplar.SelectedIndex = 0;
+            listaGenerico.DataSource = Enum.GetValues(typeof(EnumGenericoTipo));
+            listaGenerico.SelectedIndex = 0;
+        }
+        public TelaExemplar(List<Exemplar> exemplares, Exemplar exemplar)
         {
             InitializeComponent();
             // atribui a lista de exemplares recebida à variável com escopo de classe

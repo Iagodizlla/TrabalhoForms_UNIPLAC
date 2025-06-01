@@ -14,7 +14,7 @@ namespace Trabalho_Forms
             // atribui o objeto recebido à variável com escopo de classe
             this.exemplares = exemplares;
             // carrega os valores do Enum para o combobox
-            statusExemplar.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
+            statusExemplar.DataSource = Enum.GetValues(typeof(EnumExemplarStatus));
             statusExemplar.SelectedIndex = 0;
             listaGenerico.DataSource = Enum.GetValues(typeof(EnumGenericoTipo));
             listaGenerico.SelectedIndex = 0;

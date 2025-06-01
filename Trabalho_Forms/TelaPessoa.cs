@@ -21,6 +21,7 @@ public partial class TelaPessoa : Form
         cargoFuncionario.DataSource = Enum.GetValues(typeof(EnumFuncionarioCargo));
         cargoFuncionario.SelectedIndex = 0;
         // carrega os valores do Enum para o combobox
+        listBoxTipo.DataSource = Enum.GetValues(typeof(EnumGenericoTipo));
         listBoxTipo.SelectedIndex = 0;
     }
 
